@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Source Management Links</title>
+	<meta charset="UTF-8">
+	<meta name="lorenztechpilot">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  color: green;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.card {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  color: black;
+}
+
+.card-body {
+  background-color: white;
+}
+
+.card-footer {
+  background-color: white;
+}
+
+.card.match {
+  display: block;
+}
+
+.card:not(.match) {
+  display: none;
+}
+
+strong {
+  color: blue;
+}
+
+span.bg-success.chip {
+  background-color: white !important;
+  color: green;
+  text-shadow: 0px 0px 10px green;
+  margin-left: 25px;
+}
+
+.design1 {
+  border-radius: 10px;
+  border-color: lightskyblue;
+  width: 50%;
+  padding: 10px;
+  font-size: 18px;
+  margin-right: 10px;
+  caret-color: red;
+}
+
+.meane {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #ccc;
+  width: 100%;
+  color: gold;
+}
+</style>
+</head>
+<body>
+<div class="center">
+  <div class="dropdown">
+    <button class="dropbtn">Content</button>
+    <div class="dropdown-content">
+      <p><font color="red">! Warning: the search input below will only now find for 3rd trimester subjects and will not advance further more subjects. for those finding for subjects they wanted it is now possible to choose your subject in the app. </font></p>
+      <p><font color="blue">BSIT - The Bachelor of Science in Information Technology (BSIT) program aims to produce globally competitive graduates who will be professionally competent, morally upright, and socially responsible contributors to national development.</font></p>
+      <br />
+      <input type="text" id="search-input" placeholder="Paste here....." class="design1 meane">
+      <br /><br />
+    </div>
+  </div>
+</div>
+</body>
+</html>
