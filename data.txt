@@ -1,0 +1,4 @@
+<label for="file">Downloading progress:</label>
+<progress id="file" value="32" max="100"> 32% </progress>
+
+<div style="color: #FFE584" class="id01"><h2>help</h2> <p> bakit pag mataas ang resolution ng monitor ko maliit ang mga text?</p> <ul><li>iset ang value ng zoom level o pindutin ang plus sign and minus.</li> <li>pindutin sa keyboard ctrl and + o kaya ctrl and - para sa zoom ang mga keyboard user.</li></ul> <p> papa ano i navigate papunta sa source link?</p> <ul><li>pindutin lamang ang IT links sa menu sa pamamagitan ng pag pindut ng &#9776;</li> <li>para sa iba pang links pindutin ang other source links/other links na nanggagaling sa pag pindut ng &#9776;</li> </ul> <p> papano gamitin ang keyboard shortcuts?</p> <ul><li>press sa keyboard i, a, c or h. i = it links, a = about, c = concerns and h = help.</li> <li>easter eggs keyboard l and m.</li> </ul></div>
