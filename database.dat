@@ -1,0 +1,51 @@
+<table id="myTable">
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+  </tr>
+</table>
+
+<script>
+// Open a database
+var request = indexedDB.open("myDatabase", 1);
+
+// Create the object store
+request.onupgradeneeded = function(event) {
+  var db = event.target.result;
+  var objectStore = db.createObjectStore("myObjectStore", {keyPath: "id"});
+  objectStore.transaction.oncomplete = function(event) {
+    // Add data to the object store
+    var customerData = [      {id: 1, name: "John Doe", address: "123 Main St", phone: "555-555-5555"},      {id: 2, name: "Jane Smith", address: "456 Park Ave", phone: "555-555-5555"},      // etc.    ];
+    var transaction = db.transaction("myObjectStore", "readwrite");
+    var objectStore = transaction.objectStore("myObjectStore");
+    for (var i in customerData) {
+      objectStore.add(customerData[i]);
+    }
+  };
+};
+
+// Retrieve data from the object store
+request.onsuccess = function(event) {
+  var db = event.target.result;
+  var transaction = db.transaction("myObjectStore", "readonly");
+  var objectStore = transaction.objectStore("myObjectStore");
+  var request = objectStore.openCursor();
+  request.onsuccess = function(event) {
+    var cursor = event.target.result;
+    if (cursor) {
+      // Add a row to the table for each customer
+      var table = document.getElementById("myTable");
+      var row = table.insertRow();
+      var nameCell = row.insertCell(0);
+      var addressCell = row.insertCell(1);
+      var phoneCell = row.insertCell(2);
+      nameCell.innerHTML = cursor.value.name;
+      addressCell.innerHTML = cursor.value.address;
+      phoneCell.innerHTML = cursor.value.phone;
+      cursor.continue();
+    }
+  };
+};
+
+</script>
