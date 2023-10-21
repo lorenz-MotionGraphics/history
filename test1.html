@@ -1,0 +1,66 @@
+<!doctype html>
+	<html>
+	<head>
+		<style>
+.chatbot-container {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  border: 1px solid #ccc;
+  overflow-y: scroll;
+}
+
+.chatbot-message {
+  position: relative;
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+}
+
+.chatbot-message p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.chatbot-message p span {
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  display: inline-block;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+		</style>	
+	</head>
+	<body>
+<script>
+const message = document.querySelector('.chatbot-message');
+const words = message.getElementsByTagName('span');
+let delay = 0;
+for (let i = 0; i < words.length; i++) {
+  words[i].style.animationDelay = delay + 's';
+  delay += 0.2;
+}
+
+
+</script>
+<div class="chatbot-container">
+  <div class="chatbot-message">
+    <p>Hello, how can I help you today?</p>
+  </div>
+</div>
+	</body>
+	</html>
