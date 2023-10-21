@@ -1,0 +1,66 @@
+//html
+<form>
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username"><br><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br><br>
+  <input type="button" value="Login" onclick="check()">
+</form>
+
+
+//javascript
+function check() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "login.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var response = JSON.parse(xhr.responseText);
+      if (response.success) {
+        window.location.href = "success.html";
+      } else {
+        alert("Incorrect login details. Please try again.");
+      }
+    }
+  };
+  xhr.send("username=" + username + "&password=" + password);
+}
+
+//php
+<?php
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+  
+  // Connect to the database and check if the provided
+  // username and password match any records
+  // If a match is found, set $valid = true; otherwise, set $valid = false;
+  
+  if ($valid) {
+    echo json_encode(array("success" => true));
+  } else {
+    echo json_encode(array("success" => false));
+  }
+?>
+
+
+
+Nmap: This is an open-source network mapping tool that can be used to scan a website for open ports and services, as well as identify vulnerabilities in the network infrastructure.
+
+Nessus: This is a vulnerability scanner that can be used to identify weaknesses in a website's software and configuration.
+
+Metasploit: This is a framework for developing and executing exploit code. It can be used to exploit vulnerabilities in a website's software and gain access to the system.
+
+sqlmap: This is an open-source tool that automates the process of detecting and exploiting SQL injection vulnerabilities.
+
+John the Ripper: This is an open-source tool that can be used to crack passwords by brute-forcing the hash.
+
+Cain and Abel: This is a password cracking tool that can be used to recover lost or forgotten passwords by using methods such as brute-force, dictionary attacks and cryptanalysis attacks.
+
+Burp Suite: This is a web security tool that can be used for web application security testing, it can be used for a wide range of tasks such as web application scanning, testing for vulnerabilities, and even for manual penetration testing.
+
+Maltego: This is an open-source reconnaissance tool that can be used to map out the relationships between different entities on a website, such as IP addresses, domains, and email addresses.
+
+
